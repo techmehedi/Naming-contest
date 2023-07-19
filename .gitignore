@@ -1,1 +1,8 @@
 copy/
+README.md/
+node_modules
+.vscode
+/dist/main.js
+README.md
+.README.md
+
