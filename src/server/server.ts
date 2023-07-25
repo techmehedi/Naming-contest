@@ -3,6 +3,7 @@ import config, { PORT } from "./config";
 import os from "node:os";
 import apiRouter from "./api-router"
 
+
 const server = express();
 
 server.use(express.static("dist"));

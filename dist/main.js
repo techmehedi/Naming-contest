@@ -126,17 +126,17 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar 
   \***********************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar client_1 = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\nvar app_1 = __importDefault(__webpack_require__(/*! ./components/app */ \"./src/components/app.tsx\"));\nvar axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\"));\nvar config_1 = __webpack_require__(/*! ./server/config */ \"./src/server/config.ts\");\nvar container = document.getElementById(\"app\");\nvar root = (0, client_1.createRoot)(container);\naxios_1.default.get(\"\".concat(config_1.API_SERVER_URL, \"/contests\"));\nroot.render((0, jsx_runtime_1.jsx)(app_1.default, {}));\n\n\n//# sourceURL=webpack://naming-contests/./src/index.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar client_1 = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\nvar app_1 = __importDefault(__webpack_require__(/*! ./components/app */ \"./src/components/app.tsx\"));\nvar axios_1 = __importDefault(__webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\"));\nvar public_config_1 = __webpack_require__(/*! ./public-config */ \"./src/public-config.ts\");\nvar container = document.getElementById(\"app\");\nvar root = (0, client_1.createRoot)(container);\naxios_1.default.get(\"\".concat(public_config_1.API_SERVER_URL, \"/contests\")).then(function (res) {\n    console.log(res.data);\n});\nroot.render((0, jsx_runtime_1.jsx)(app_1.default, {}));\n\n\n//# sourceURL=webpack://naming-contests/./src/index.tsx?");
 
 /***/ }),
 
-/***/ "./src/server/config.ts":
+/***/ "./src/public-config.ts":
 /*!******************************!*\
-  !*** ./src/server/config.ts ***!
+  !*** ./src/public-config.ts ***!
   \******************************/
 /***/ ((__unused_webpack_module, exports) => {
 
-eval("\nvar _a, _b, _c, _d;\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.DATABASE_NAME = exports.MONGOUB_URI = exports.API_SERVER_URL = exports.SERVER_URL = exports.HOST = exports.PORT = void 0;\nvar env = process.env;\nexports.PORT = (_a = env.PORT) !== null && _a !== void 0 ? _a : \"8080\";\nexports.HOST = (_b = env.host) !== null && _b !== void 0 ? _b : \"0.0.0.0\";\nexports.SERVER_URL = \"http://\".concat(exports.HOST, \":\").concat(exports.PORT);\nexports.API_SERVER_URL = \"http://\".concat(exports.HOST, \":\").concat(exports.PORT, \"/api\");\nexports.MONGOUB_URI = (_c = env.MONGODB_URI) !== null && _c !== void 0 ? _c : \"mongodb://localhost:27017\";\nexports.DATABASE_NAME = (_d = env.DATABASE_NAME) !== null && _d !== void 0 ? _d : \"local\";\nexports[\"default\"] = {\n    PORT: exports.PORT,\n    HOST: exports.HOST,\n    SERVER_URL: exports.SERVER_URL,\n    API_SERVER_URL: exports.API_SERVER_URL,\n};\n\n\n//# sourceURL=webpack://naming-contests/./src/server/config.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.API_SERVER_URL = exports.HOST = exports.PORT = void 0;\nexports.PORT = \"8080\";\nexports.HOST = \"0.0.0.0\";\nexports.API_SERVER_URL = \"http://\".concat(exports.HOST, \":\").concat(exports.PORT, \"/api\");\n\n\n//# sourceURL=webpack://naming-contests/./src/public-config.ts?");
 
 /***/ }),
 
